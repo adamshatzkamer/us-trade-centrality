@@ -207,3 +207,15 @@ def test_a_far_alternative_needs_a_looser_distance_bound():
     assert abs(replaceability.delta_needed(cand, 1).iloc[0] - 0.5) < 1e-12
     vt = cand[cand.alt == "VT"].iloc[0]
     assert vt.dist_source == "centroid" and 0 < vt.alt_dist < 100
+
+
+identify = load("run_identify_state")
+
+
+def test_unique_count_separates_distinct_from_shared_profiles():
+    distinct = np.array([[3.0, 2, 1], [1, 3, 2], [2, 1, 3]])
+    shared = np.array([[3.0, 2, 1], [3, 2, 1], [3, 2, 1]])
+    zeros = np.zeros((3, 3))
+    assert identify.unique_count(distinct, zeros, 1) == 3
+    assert identify.unique_count(shared, zeros, 1) == 0
+    assert identify.unique_count(shared, distinct, 1) == 3

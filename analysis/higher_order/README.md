@@ -131,6 +131,37 @@ margin are fitted as zero, where the estimate sits on the boundary (Fally 2015,
 fn 13). The three-way part reported above is what the full fixed-effect
 specification leaves out.
 
+## Can a state be identified from its flows?
+
+`run_identify_state.py`. Two views of the same question.
+
+Profiles (2017, 51 states, by value): how many states are uniquely identified by their
+top-k outflow and top-k inflow commodities, against two baselines of 1,000 runs each.
+
+| Top k each way | Outflow only | Inflow only | Both | Shuffled commodities (95%) | National mix |
+|---|---|---|---|---|---|
+| 1 | 6 | 2 | 18 | 30.2 (23-38) | 0.9 |
+| 2 | 27 | 10 | 45 | 50.8 (49-51) | 1.5 |
+| 3 | 47 | 29 | 51 | 51.0 (51-51) | 3.6 |
+
+States are far more distinctive than if each shipped the national mix, but less unique
+than shuffled profiles (999 of 1,000 shuffles beat the observed 18 at k = 1): states
+share top commodities and fall into families. Uniqueness at k = 3 holds for random
+profiles too, so it says nothing.
+
+Shipments (records are the observations): share of origin-state uncertainty answered,
+by value.
+
+| Year | Commodity | Destination | Both | Destination state by origin + commodity |
+|---|---|---|---|---|
+| 2012 | 7.3% | 11.3% | 26.1% | 20.9% |
+| 2017 | 6.0% | 10.8% | 23.7% | 19.4% |
+| 2022 | 6.1% | 10.2% | 23.4% | 19.2% |
+
+Commodity and partner together answer more than the two separately (2017: 23.7% against
+6.0 + 10.8). By record counts the shares are smaller (2017: 2.2%, 8.6%, 13.5%) with the
+same shape.
+
 ## Caveats
 
 - Survey design: the record counts ignore the sampling design; dollar-weighted
