@@ -381,8 +381,8 @@ commodities. Asymmetry is buyer minus supplier HHI.
 > finding that the named routes lack alternatives. A continuous distance gap
 > (nearest sufficient origin's distance relative to the link's, both measured
 > the same way) is more stable across years (Spearman 0.73 to 0.87) and is the
-> recommended measure. Audit scripts and outputs are in preparation for this
-> branch.
+> recommended measure. Audit scripts, outputs and full numbers:
+> `audit/AUDIT.md`.
 
 `run_replaceability.py`, writing `output/replaceability_*`. Dependence here means
 concentration of observed flows plus a stated, bounded replaceability. Capacity
