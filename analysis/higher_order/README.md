@@ -324,6 +324,35 @@ commodities. Asymmetry is buyer minus supplier HHI.
 
 ## Bounded replaceability
 
+> **Correction (2026-10-11).** A follow-up audit reproduced this section exactly
+> (all class counts and per-link values, 1,378 link-years) and found three
+> limits that weaken the reading below:
+>
+> - The relative distance bound favours short links. Links with no alternative
+>   have a median r of 71 to 100 miles against 400 to 448 for the rest, and 88
+>   to 97% of them join neighbouring states (Census county adjacency file). For
+>   156 of the 296 no-alternative link-years, an origin with enough supply is
+>   less than 250 extra miles away. Under a fixed gap in miles, flagged links
+>   are still 71 to 89% neighbours against a base rate of 50 to 57%, so part of
+>   the pattern is real.
+> - The incumbent's distance is commodity-specific while most alternatives use
+>   the all-commodity pair median. Measuring both sides the same way removes
+>   the no-alternative label from 148 to 159 of the 296 link-years and adds it
+>   to 47. Only 4 or 5 of the 15 named links keep a gap of at least 250 miles
+>   in all three years, not the nine stated below.
+> - Persistence and churn are confounded with sampling. Two bootstrap
+>   replicates of the same survey keep only 68 to 73% of each other's
+>   sole-supplier links, so record sampling alone accounts for at least 40 to
+>   47% of the observed churn; persistent links are mostly the well-measured
+>   ones.
+>
+> Read the class counts as a description of this particular bound, not as a
+> finding that the named routes lack alternatives. A continuous distance gap
+> (nearest sufficient origin's distance relative to the link's, both measured
+> the same way) is more stable across years (Spearman 0.73 to 0.87) and is the
+> recommended measure. Audit scripts and outputs are in preparation for this
+> branch.
+
 `run_replaceability.py`, writing `output/replaceability_*`. Dependence here means
 concentration of observed flows plus a stated, bounded replaceability. Capacity
 is not claimed.
