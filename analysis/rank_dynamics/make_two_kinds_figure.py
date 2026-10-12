@@ -104,25 +104,42 @@ def main():
     ax.set_xticks([])
     ax.set_yticks([1, 5, 10, 15, n_b])
     ax.set_ylabel(
-        f"Bridge position rank\n({n_b} states broker)", fontsize=21, color=MUTED, labelpad=12
+        f"Bridge position rank\n(betweenness; {n_b} states broker)",
+        fontsize=21,
+        color=MUTED,
+        labelpad=12,
     )
     ax.text(
         51.5,
         1.2,
-        "Strong bridges, weak hubs",
+        "High bridge position,\nlow trade prestige",
         ha="right",
         va="top",
         fontsize=20,
         color=MUTED,
         style="italic",
     )
-    ax.text(51.5, n_b + 0.6, "Dot size: GDP", ha="right", va="bottom", fontsize=18, color=MUTED)
+    ax.text(
+        51.5,
+        n_b + 0.6,
+        "Larger dot = larger GDP",
+        ha="right",
+        va="bottom",
+        fontsize=22,
+        color=INK,
+        fontweight="bold",
+    )
 
     band.set_xlim(0, 52)
     band.set_ylim(-0.7, 1.3)
     band.set_yticks([])
     band.set_xticks([1, 10, 20, 30, 40, 51])
-    band.set_xlabel("Trade prestige rank (1 = highest)", fontsize=21, color=MUTED, labelpad=10)
+    band.set_xlabel(
+        "Trade prestige rank (eigenvector, in-flow; 1 = highest)",
+        fontsize=21,
+        color=MUTED,
+        labelpad=10,
+    )
     band.text(
         51.5,
         0.75,

@@ -22,8 +22,8 @@ CACHE = HERE.parents[1] / "evolution" / "cache"
 OUT = HERE / "figures"
 REGISTERED = {2012: 0.988, 2022: 0.985}
 ARCS = [
-    (2012, "Back to 2012, before COVID", "#7fbfa9"),
-    (2022, "Forward to 2022, through COVID", "#009e73"),
+    (2012, "2017 vs 2012: before COVID", "#7fbfa9"),
+    (2022, "2017 vs 2022: through COVID", "#009e73"),
 ]
 LABEL = ["TX", "KY", "MS", "DC"]
 INK, MUTED, GRID = "#1f2a24", "#5a5c5b", "#e3e8e5"
@@ -89,7 +89,7 @@ def panel(ax, base, other, year, title, color):
     ax.text(
         0,
         1.04,
-        f"ρ = {rho:.3f} · {top} of the top 10 unchanged",
+        f"Rank correlation {rho:.3f} · {top} of top 10 kept",
         transform=ax.transAxes,
         fontsize=23,
         color=color if year == 2022 else "#3f8f75",
