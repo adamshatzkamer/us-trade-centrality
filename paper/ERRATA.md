@@ -68,3 +68,27 @@ unaffected.
 **Source.** `analysis/eigenvector_direction/check_direction.py` →
 `output/direction.json`. Prompted by a question at the thesis defense (April 2026)
 about left and right eigenvectors; confirmed and quantified in October 2026.
+
+## 2. The set of structurally undervalued states (October 2026)
+
+**What the thesis says.** Section 4 lists the "top overperformers" by eigenvector
+divergence as KY (+14), MS (+10), MT (+8), LA (+7), SC (+7), TN (+6), MI (+6) and
+IN (+6), and Section 5.4 refers to "the eight states this framework identifies as
+structurally undervalued." Neither section states the rule that selects them.
+
+**The issue.** No single threshold yields that list. North Dakota has the same
+gap as Tennessee, Michigan and Indiana (GDP rank 46, eigenvector rank 40, +6) and
+is not listed. A threshold of +6 selects nine states (the eight plus ND); the
+threshold of 5 places used for the 39% divergence count selects eleven (adding
+ND, WV and OK at +6, +5 and +5).
+
+**Corrected statement.** A state is structurally undervalued when its
+eigenvector (in-flow) rank is at least 5 places above its GDP rank, the same
+threshold as the 39% count. In 2017 that is 11 states: KY, MS, MT, SC, LA, TN,
+ND, MI, IN, WV and OK.
+
+**Effect on results.** The divergence count, the correlation with GDP and the
+ranks are unchanged. The data-center observation in Section 5.4 ("seven of the
+eight") applies to the eight states as listed; it has not been checked for ND,
+WV or OK and should not be extended to them without that check. Montana and
+Louisiana also depend on the eigenvector direction (Section 1).

@@ -22,6 +22,7 @@ Three centrality measures applied to a 51-node interstate trade network (50 stat
 ## Corrections
 
 - **Eigenvector direction (October 2026).** Thesis Equation 3.2 writes the out-flow eigenvector; every reported value is the in-flow version (NetworkX's default on a directed graph). The numbers are correct for the in-flow version, and six of the eight structurally undervalued states hold under either direction; Louisiana and Montana do not. Details and the full comparison: [`paper/ERRATA.md`](paper/ERRATA.md).
+- **Which states are structurally undervalued (October 2026).** The thesis lists eight states without stating the rule; North Dakota ties three of them at +6 and is omitted. Corrected definition: eigenvector rank at least 5 places above GDP rank, which gives 11 states in 2017. See [`paper/ERRATA.md`](paper/ERRATA.md) §2.
 
 ## Explore the Data
 
