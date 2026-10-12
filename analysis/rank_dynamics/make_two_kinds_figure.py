@@ -104,7 +104,7 @@ def main():
     ax.set_xticks([])
     ax.set_yticks([1, 5, 10, 15, n_b])
     ax.set_ylabel(
-        f"Bridge position rank\n(betweenness; {n_b} states broker)",
+        f"Bridge position rank, 2017\n(betweenness; {n_b} states broker)",
         fontsize=21,
         color=MUTED,
         labelpad=12,
@@ -135,7 +135,7 @@ def main():
     band.set_yticks([])
     band.set_xticks([1, 10, 20, 30, 40, 51])
     band.set_xlabel(
-        "Trade prestige rank (eigenvector, in-flow; 1 = highest)",
+        "Trade prestige rank, 2017 (eigenvector, in-flow; 1 = highest)",
         fontsize=21,
         color=MUTED,
         labelpad=10,
@@ -143,7 +143,7 @@ def main():
     band.text(
         51.5,
         0.75,
-        f"No brokerage: {len(none)} states",
+        f"No brokerage in 2017: {len(none)} states",
         fontsize=19,
         color=MUTED,
         va="bottom",
